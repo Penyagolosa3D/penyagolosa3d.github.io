@@ -23,6 +23,8 @@
 				var xmlDoc = xml.responseXML;
 				alert(xmlDoc);
 				var table = "hola"
+				var data = xmlDoc.getElementsByTagName("Listado").getElementsByTagName("Pieza").getElementsByTagName("Nombre").toString();
+				alert(data)
 				document.getElementById("demo").innerHTML = table;
 			}
 		</script>	
