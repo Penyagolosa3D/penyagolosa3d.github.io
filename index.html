@@ -10,12 +10,25 @@
 			}
 			
 			function loadXML() { 
-				alert("hola")
 				var lista = new XMLHttpRequest();
 				lista.open("GET", "data.xml", true);
 				lista.setRequestHeader("Content-Type", "text/xml");
 				lista.send(null);
+				ListaObjetos(lista);
 			}
+			
+			function ListaObjetos(xml) {
+				var i;
+				var xmlDoc = xml.responseXML;
+				var tabla = "<tr><th>Pieza</th><th>Precio</th></tr>";
+				var x = xmlDoc.getElementsByTagName("Pieza");
+				for (i = 0; i <x.length; i++) { 
+					table += "<tr><td>" + x[i].getElementsByTagName("Nombre")[0].childNodes[0].nodeValue + "</td><td>" + x[i].getElementsByTagName("Precio")[0].childNodes[0].nodeValue + "</td></tr>"; 
+				}
+				document.getElementById("demo").innerHTML = table;
+			}
+
+				
 
 		</script>	
 		<style>
