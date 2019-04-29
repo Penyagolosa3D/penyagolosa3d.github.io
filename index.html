@@ -11,6 +11,7 @@
 			}
 			
 			function loadXML() { 
+				alert("hola")
 				var lista = new XMLHttpRequest();
 				lista.open("GET", "data.xml", true);
 				lista.setRequestHeader("Content-Type", "text/xml");
@@ -19,6 +20,7 @@
 			}
 			
 			function ListaObjetos(xml) {
+				alert("hola2")
 				var i;
 				var xmlDoc = xml.responseXML;
 				var tabla = "<tr><th>Pieza</th><th>Precio</th></tr>";
