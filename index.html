@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>	
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
 		<script>
 			function show(shown, hidden) {
 				document.getElementById(shown).style.display='block';
@@ -53,11 +53,13 @@
 				font-family: verdana;
 			}
 
-			table, th, td {
-				border: 1px solid black; 
-				border-collapse:collapse;
+			table {
+				border-collapse: collapse;
+				border: 2px black solid;
+				font: 12px sans-serif;
 			}
-			th, td {
+			td {
+				border: 1px black solid;
 				padding: 5px;
 			}
 
@@ -110,14 +112,30 @@
 			}
 		</style>
 	</head>
-	<body bgcolor='red'>
+	<body bgcolor='white'>
 		<div class="pagina" id="Page1">
 			<button class="boton" align="center" onclick="return show('Page2','Page1');">Lista de Objetos</button>
 			<button class="boton" align="center" onclick="return show('Page3','Page1');">Lista de Ventas</button>
 		</div>
 
 		<div class="pagina" id="Page2" style="display:none">
-			<table id="demo"></table>
+			<table datasrc='#data'>
+				<thead>
+					<tr><th>Number</th><th>English</th><th>French</th><th>German</th></tr>
+				</thead>
+				<tbody> <tr>
+					<td><span datafld='number'> </span></td>
+					<td><span datafld='english'></span></td>
+					<td><span datafld='french'> </span></td>
+					<td><span datafld='german'> </span></td>
+				</tbody>
+			</table>
+			
+			<object ID=data classid="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83">
+				<param nAme="DataURL" value="data.csv">
+				<param nAme="UseHeader" value="true">
+			</object>
+			
 			<button class="boton" align="center" onclick="loadXML(this)">Lista de Objetos</button>
 			<button class="boton" align="center" onclick="return show('Page1','Page2');">Inicio</button>
 		</div>
