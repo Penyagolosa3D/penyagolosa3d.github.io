@@ -5,7 +5,7 @@ function show(shown, hidden) {
 	document.getElementById(hidden).style.display='none';
 	if (shown == 'Page2') {
 		alert("pagina 2");
-		CargaObjetos();	
+	//	CargaObjetos();	
 	};
 	return false;
 }
