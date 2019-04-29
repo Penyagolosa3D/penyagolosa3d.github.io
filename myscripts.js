@@ -39,45 +39,6 @@ function start() {
 	loadXMLDoc();
 }
 
-function LoadData() {
-	var pagina3 = document.getElementById('DivTabla');			
-	var datosimp = localStorage.getItem("datos");
-	var datostabla = document.createElement("table");
-	var datarray = datosimp.split("-");
-	var rep = (datarray.length/4);
-	for (i = 0; i < rep; i++) {
-		var datoshilera = document.createElement("tr");
-		var k1 = 0 + (4*i);
-		var k1 = Number(k1);
-		var k2 = 1 + (4*i);
-		var k2 = Number(k2);
-		var k3 = 2 + (4*i);
-		var k3 = Number(k3);
-		var k4 = 3 + (4*i);
-		var k4 = Number(k4);
-		var datoscelda = document.createElement("td");
-		var datos1 = datarray[k1];
-		datoscelda.appendChild(document.createTextNode(datos1));
-		datoshilera.appendChild(datoscelda);
-		var datoscelda = document.createElement("td");
-		var datos2 = datarray[k2];
-		datoscelda.appendChild(document.createTextNode(datos2));
-		datoshilera.appendChild(datoscelda);
-		var datoscelda = document.createElement("td");
-		var datos3 = datarray[k3];
-		datoscelda.appendChild(document.createTextNode(datos3));
-		datoshilera.appendChild(datoscelda);
-		var datoscelda = document.createElement("td");
-		var datos4 = datarray[k4];
-		datoscelda.appendChild(document.createTextNode(datos4));
-		datoshilera.appendChild(datoscelda);
-		datostabla.appendChild(datoshilera);		
-	}
-	datostabla.setAttribute("border","3");
-	datostabla.setAttribute("id","tabladatos");
-	datostabla.setAttribute("class","tabla");
-	pagina3.appendChild(datostabla);
-}
 
 function BorrarDatos () {
     	var r = confirm("¿seguro que desea borrar todos los datos?");
