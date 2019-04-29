@@ -22,7 +22,7 @@
 				var xmlDoc = xml.responseXML;
 				alert(xmlDoc);
 				var table = "hola"
-				var data = xmlDoc.getElementsByTagName("Listado").getElementsByTagName("Pieza").getElementsByTagName("Nombre").toString();
+				var data = xmlDoc.getElementsByTagName("Listado").getElementsByTagName("Pieza").getElementsByTagName("Nombre").nodeValue;
 				alert(data)
 				document.getElementById("demo").innerHTML = table;
 			}
