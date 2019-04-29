@@ -15,7 +15,6 @@
 				lista.open("GET", "data.xml", true);
 				lista.setRequestHeader("Content-Type", "text/xml");
 				lista.send(null);
-				CargaObjetos(this);
 			}
 
 		</script>	
@@ -110,6 +109,7 @@
 
 		<div class="pagina" id="Page2" style="display:none">
 			<table id="demo"></table>
+			<button class="boton" align="center" onclick="loadXML(this)">Lista de Objetos</button>
 			<button class="boton" align="center" onclick="return show('Page1','Page2');">Inicio</button>
 		</div>
 
