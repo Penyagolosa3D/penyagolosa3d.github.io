@@ -1,144 +1,120 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="myscripts.js"></script>	
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="myscripts.js"></script>	
+		<style>
+			.pagi {
+				width:50%;
+				padding: 2em 0 2em 0;
+				margin-top: 100px;
+				margin-right: 25%;
+				margin-bottom: 0;
+				margin-left: auto;
+			}
 	
-<style>
+			.pagina {
+				margin:0px;
+				height:100%;
+				width:100%;
+			}
 
-	
-.pagi {
-	width:50%;
-	padding: 2em 0 2em 0;
-	margin-top: 100px;
-	margin-right: 25%;
-	margin-bottom: 0;
-	margin-left: auto;
-}
-	
-.pagina {
-	margin:0px;
-	height:100%;
-	width:100%;
-}
+			.lista {
+				border-radius: 5px;
+				width: 70%;
+				margin-left: 15%;
+				margin-bottom: 2%;
+				font-size: large;
+				font-size: 3.5vh;
+				font-family: verdana;
+			}
+			.boton {
+				margin-bottom: 2%;
+				width: 50%;
+				text-align: center; 
+				margin-left: 25%;
+				font-size: large;
+				font-size: 3.5vh;
+				font-family: verdana;
+			}
 
-.lista {
-	border-radius: 5px;
-	width: 70%;
-	margin-left: 15%;
-	margin-bottom: 2%;
-	font-size: large;
-	font-size: 3.5vh;
-	font-family: verdana;
-}
-.boton {
-	margin-bottom: 2%;
-	width: 50%;
-	text-align: center; 
-	margin-left: 25%;
-	font-size: large;
-	font-size: 3.5vh;
-	font-family: verdana;
-}
+			.tabla {
+				border-radius: 0.5px;
+				margin-top: 5%;
+				margin-bottom: 5%;
+				font-size: large;
+				font-size: 2.5vh;
+				font-family: verdana;
+				width: 100%;
+				text-align:center;
+				padding: 5px;
+			}
 
-.tabla {
-	border-radius: 0.5px;
-	margin-top: 5%;
-	margin-bottom: 5%;
-	font-size: large;
-	font-size: 2.5vh;
-	font-family: verdana;
-	width: 100%;
-	text-align:center;
-	padding: 5px;
-}
+			header {
+				margin-top:0px;
+				width:100%;
+			}
 
-header {
-	margin-top:0px;
-	width:100%;
-}
+			h1 {
+			    color:#373636;
+			    font-family: impact;
+			    font-size: xx-large;
+				font-size: 10vh;
+				text-align:center;
+				text-decoration:underline;
+			}
 
-h1 {
-    color:#373636;
-    font-family: impact;
-    font-size: xx-large;
-	font-size: 10vh;
-	text-align:center;
-	text-decoration:underline;
-}
+			h2 {
 
-h2 {
+			    font-family: verdana;
+			    font-size: xx-large;
+				font-size: 6vh;
+				text-align:center;
 
-    font-family: verdana;
-    font-size: xx-large;
-	font-size: 6vh;
-	text-align:center;
+			}
 
-}
+			h3 {
+			    color:#C60;
+			    font-family: verdana;
+			    font-size: xx-large;
+				font-size: 5vh;
+				text-align:center;
+			}
 
-h3 {
-    color:#C60;
-    font-family: verdana;
-    font-size: xx-large;
-	font-size: 5vh;
-	text-align:center;
-}
+			input {
+				text-align:center;
+				width: 10%x;
+				display: inline;
+				margin:2px;
+				font-size: large;
+				font-size: 3.5vh;
+				font-family: verdana;
+			}
 
-input {
-	text-align:center;
-	width: 10%x;
-	display: inline;
-	margin:2px;
-	font-size: large;
-	font-size: 3.5vh;
-	font-family: verdana;
-}
+			label {
+				margin:0.5px;
+				font-size: large;
+				font-size: 3.5vh;
+				font-family: verdana;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Penyagolosa3D</h1>
+		</header>
+		<div class="pagina" id="Page1">
+			<button class="boton" align="center" onclick="return show('Page2','Page1');">Lista de Objetos</button>
+			<button class="boton" align="center" onclick="return show('Page3','Page1');">Lista de Ventas</button>
+		</div>
 
-label {
-	margin:0.5px;
-	font-size: large;
-	font-size: 3.5vh;
-	font-family: verdana;
-}
+		<div class="pagina" id="Page2" style="display:none">
+			<div class="tabla" id="TablaObjetos"></div>	
+			<button class="boton" align="center" onclick="return show('Page1','Page2');">Inicio</button>
+		</div>
 
-html {
-	background-color: #E0FCF0
-}
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-<h1>Penyagolosa3D</h1>
-</header>
-	
-<div class="pagina" id="Page1">
-
-<button class="boton" align="center" onclick="return show('Page2','Page1');">Lista de Objetos</button>
-<button class="boton" align="center" onclick="return show('Page3','Page1');">Lista de Ventas</button>
-
-
-</div>
-
-<div class="pagina" id="Page2" style="display:none">
-	
-	<div class="tabla" id="TablaObjetos"></div>	
-	
-<button class="boton" align="center" onclick="return show('Page1','Page2');">Inicio</button>
-
-</div>
-	
-</div>
-
-<div class="pagina" id="Page3" style="display:none">
-	
-	<div class="tabla" id="TablaVentas"></div>	
-	
-<button class="boton" align="center" onclick="return show('Page1','Page2');">Inicio</button>
-
-</div>
-
+		<div class="pagina" id="Page3" style="display:none">
+			<div class="tabla" id="TablaVentas"></div>	
+			<button class="boton" align="center" onclick="return show('Page1','Page3');">Inicio</button>
+		</div>
 </html>
