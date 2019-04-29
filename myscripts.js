@@ -3,16 +3,14 @@ function show(shown, hidden) {
 	alert("cambio");
 	document.getElementById(shown).style.display='block';
 	document.getElementById(hidden).style.display='none';
-	CargaObjetos();	
-	};
 	return false;
 }
 
 
 function CargaObjetos() {
 	alert("abro");
-	//xmlhttp.open("GET", "data.xml", true);
-	//xmlhttp.send();
+	xmlhttp.open("GET", "data.xml", true);
+	xmlhttp.send();
 	var i;
 	var ii;
 	var xmlDoc = xml.responseXML;
