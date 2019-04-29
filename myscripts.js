@@ -3,18 +3,16 @@ function show(shown, hidden) {
 	alert("cambio");
 	document.getElementById(shown).style.display='block';
 	document.getElementById(hidden).style.display='none';
+	loadXML(this);
 	return false;
 }
 
-function loadXMLDoc() {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      CargaObjetos(this);
-    }
-  };
-  xmlhttp.open("GET", "data.xml", true);
-  xmlhttp.send();
+function loadXML() { 
+	var lista = new XMLHttpRequest();
+	lista.open("GET", "data.xml", true);
+	lista.setRequestHeader("Content-Type", "text/xml");
+	lista.send(null);
+	CargaObjetos(this);
 }
 
 function CargaObjetos() {
@@ -28,9 +26,9 @@ function CargaObjetos() {
 		var y = xmlDoc.getElementsByTagName("Pieza");
 		for (ii = 0; ii <x.length; ii++){
 			table += "<tr><td>" +
-				y[ii].getElementsByTagName("Nombre")[0].childNodes[0].nodeValue +
+				y[ii].getElementsByTagName("Nombre")[0].textContent.toString() +
 				"</td><td>" +
-				y[ii].getElementsByTagName("Precio")[0].childNodes[0].nodeValue +
+				y[ii].getElementsByTagName("Precio")[0].textContent.toString() +
 				"</td></tr>";
 		}
 	}
