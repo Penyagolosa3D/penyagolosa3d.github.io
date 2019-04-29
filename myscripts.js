@@ -3,6 +3,7 @@ function show(shown, hidden) {
 	document.getElementById(shown).style.display='block';
 	document.getElementById(hidden).style.display='none';
 	if (shown == 'Page2') {
+		alert("pagina 2")
 		CargaObjetos();	
 	};
 	return false;
