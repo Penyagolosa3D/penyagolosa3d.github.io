@@ -29,15 +29,11 @@
 				font-family: verdana;
 			}
 
-			.tabla {
-				border-radius: 0.5px;
-				margin-top: 5%;
-				margin-bottom: 5%;
-				font-size: large;
-				font-size: 2.5vh;
-				font-family: verdana;
-				width: 100%;
-				text-align:center;
+			table, th, td {
+				border: 1px solid black; 
+				border-collapse:collapse;
+			}
+			th, td {
 				padding: 5px;
 			}
 
@@ -96,18 +92,18 @@
 			<h1>Penyagolosa3D</h1>
 		</header>
 		<div class="pagina" id="Page1">
-			<button class="boton" align="center" onclick="return show('Page2','Page1');">Lista de Objetos</button>
-			<button class="boton" align="center" onclick="return show('Page3','Page1');">Lista de Ventas</button>
+			<button class="boton" align="center" onclick="show('Page2','Page1');">Lista de Objetos</button>
+			<button class="boton" align="center" onclick="show('Page3','Page1');">Lista de Ventas</button>
 		</div>
 
 		<div class="pagina" id="Page2" style="display:none">
-			<div id="TablaObjetos"></div>	
-			<button class="boton" align="center" onclick="return show('Page1','Page2');">Inicio</button>
+			<table id="demo"></table>
+			<button class="boton" align="center" onclick="show('Page1','Page2');">Inicio</button>
 		</div>
 
 		<div class="pagina" id="Page3" style="display:none">
 			<div id="TablaVentas"></div>	
-			<button class="boton" align="center" onclick="return show('Page1','Page3');">Inicio</button>
+			<button class="boton" align="center" onclick="show('Page1','Page3');">Inicio</button>
 		</div>
 	</body>
 </html>
