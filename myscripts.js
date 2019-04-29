@@ -6,6 +6,7 @@ function show(shown, hidden) {
 	return false;
 }
 
+
 function loadXMLDoc() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
