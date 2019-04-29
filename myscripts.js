@@ -3,14 +3,15 @@ function show(shown, hidden) {
 	document.getElementById(shown).style.display='block';
 	document.getElementById(hidden).style.display='none';
 	if (shown == 'Page2') {
-		loadXMLDoc();
-		CargaObjetos();
-		
+		CargaObjetos();	
 	};
 	return false;
 }
 
 function CargaObjetos() {
+	alert("abro")
+	xmlhttp.open("GET", "data.xml", true);
+	xmlhttp.send();
 	var i;
 	var ii;
 	var xmlDoc = xml.responseXML;
@@ -29,17 +30,3 @@ function CargaObjetos() {
   }
   document.getElementById("TablaObjetos").innerHTML = table;
 }
-
-function loadXMLDoc() {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myFunction(this);
-    }
-  };
-  xmlhttp.open("GET", "data.xml", true);
-  xmlhttp.send();
-}
-
-
-
