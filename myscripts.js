@@ -5,7 +5,6 @@ function show(shown, hidden) {
 	document.getElementById(hidden).style.display='none';
 }
 
-
 function CargaObjetos() {
 	alert("abro");
 	xmlhttp.open("GET", "data.xml", true);
