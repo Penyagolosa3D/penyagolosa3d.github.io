@@ -22,35 +22,7 @@ function loadXMLDoc() {
 }
 
 function start() {
-	if(localStorage.datos) {
-		LoadData(this);
-	}
-	else {
-		var pagina3 = document.getElementById('DivTabla');			
-		var datostabla = document.createElement("table");
-		var datoshilera = document.createElement("tr");	
-		var datosdia = document.createTextNode("Día");
-		var datosvuelta = document.createTextNode("Vuelta");
-		var datosasig = document.createTextNode("Asignatura");			
-		var datostiempo = document.createTextNode("Tiempo");
-		var datoscelda = document.createElement("td");
-		datoscelda.appendChild(datosdia);
-		datoshilera.appendChild(datoscelda);
-		var datoscelda = document.createElement("td");
-		datoscelda.appendChild(datosvuelta);
-		datoshilera.appendChild(datoscelda);
-		var datoscelda = document.createElement("td");
-		datoscelda.appendChild(datosasig);
-		datoshilera.appendChild(datoscelda);
-		var datoscelda = document.createElement("td");
-		datoscelda.appendChild(datostiempo);
-		datoshilera.appendChild(datoscelda);
-		datostabla.appendChild(datoshilera);
-		datostabla.setAttribute("border","3");
-		datostabla.setAttribute("id","tabladatos");
-		datostabla.setAttribute("class","tabla");
-		pagina3.appendChild(datostabla);
-	}
+	loadXMLDoc();
 }
 
 function LoadData() {
