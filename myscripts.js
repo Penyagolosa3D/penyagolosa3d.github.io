@@ -1,5 +1,6 @@
 // JavaScript Document
 function show(shown, hidden) {
+	alert("cambio")
 	document.getElementById(shown).style.display='block';
 	document.getElementById(hidden).style.display='none';
 	if (shown == 'Page2') {
@@ -8,6 +9,7 @@ function show(shown, hidden) {
 	};
 	return false;
 }
+
 
 function CargaObjetos() {
 	alert("abro")
