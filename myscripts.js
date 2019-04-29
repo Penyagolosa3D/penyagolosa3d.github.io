@@ -37,6 +37,7 @@ function loadXMLDoc() {
 
 function start() {
 	loadXMLDoc();
+	alert("HI");
 }
 
 
