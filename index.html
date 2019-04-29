@@ -21,12 +21,7 @@
 				alert(xml);
 				var i;
 				var xmlDoc = xml.responseXML;
-				var tabla = "<tr><th>Pieza</th><th>Precio</th></tr>";
-				var x = xmlDoc.getElementsByTagName("Pieza");
-				for (i = 0; i <x.length; i++) { 
-					alert (x[i].getElementsByTagName("Nombre")[0].childNodes[0].nodeValue)
-					table += "<tr><td>" + x[i].getElementsByTagName("Nombre")[0].childNodes[0].nodeValue + "</td><td>" + x[i].getElementsByTagName("Precio")[0].childNodes[0].nodeValue + "</td></tr>"; 
-				}
+				var table = "hola"
 				document.getElementById("demo").innerHTML = table;
 			}
 		</script>	
