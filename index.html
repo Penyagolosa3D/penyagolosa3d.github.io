@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="myscripts.js"></script>
+  
+<style>
+
+.pagi {
+	width:50%;
+	padding: 2em 0 2em 0;
+	margin-top: 100px;
+	margin-right: 25%;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+	
+.pagina {
+	margin:0px;
+	height:100%;
+	width:100%;
+}
+
+.lista {
+	border-radius: 5px;
+	width: 70%;
+	margin-left: 15%;
+	margin-bottom: 2%;
+	font-size: large;
+	font-size: 3.5vh;
+	font-family: verdana;
+}
+.boton {
+	margin-bottom: 2%;
+	width: 50%;
+	text-align: center; 
+	margin-left: 25%;
+	font-size: large;
+	font-size: 3.5vh;
+	font-family: verdana;
+}
+
+.tabla {
+	border-radius: 0.5px;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	font-size: large;
+	font-size: 2.5vh;
+	font-family: verdana;
+	width: 100%;
+	text-align:center;
+	padding: 5px;
+}
+
+header {
+	margin-top:0px;
+	width:100%;
+}
+
+h1 {
+    color:#373636;
+    font-family: impact;
+    font-size: xx-large;
+	font-size: 10vh;
+	text-align:center;
+	text-decoration:underline;
+}
+
+h2 {
+
+    font-family: verdana;
+    font-size: xx-large;
+	font-size: 6vh;
+	text-align:center;
+
+}
+
+h3 {
+    color:#C60;
+    font-family: verdana;
+    font-size: xx-large;
+	font-size: 5vh;
+	text-align:center;
+}
+
+input {
+	text-align:center;
+	width: 10%x;
+	display: inline;
+	margin:2px;
+	font-size: large;
+	font-size: 3.5vh;
+	font-family: verdana;
+}
+
+label {
+	margin:0.5px;
+	font-size: large;
+	font-size: 3.5vh;
+	font-family: verdana;
+}
+
+html {
+	background-color: #E0FCF0
+}
+
+</style>
+
+</head>
+
+<body onLoad="start(this)">
+
+<header>
+<h1>CronoMIR</h1>
+</header>
+	
+<div class="pagina" id="Page1">
+
+<button class="boton" align="center" onclick="return show('Page2','Page1');">Crono</button>
+<button class="boton" align="center" onclick="return show('Page3','Page1');">Estadísticas</button>
+
+</div>
+
+<div class="pagina" id="Page2" style="display:none">
+
+<h2>Selecciona la asignatura</font></h2>
+
+<select class="lista" id="Vuelta" name="Vuelta">
+   <option selected value="0">Elige la vuelta</option>
+   <option value="1">Vuelta 1</option>
+   <option value="2">Vuelta 2</option>
+   <option value="3">Vuelta 3</option>
+</select>
+	
+<select class="lista" id="Asig" name="Asig">
+   <option selected value="0">Elige una asignatura</option>
+   <option value="Anatomía">Anatomía</option>
+   <option value="Anatomía Patológica">Anatomía Patológica</option> 
+   <option value="Anestesia">Anestesia</option> 
+   <option value="Bioética">Bioética</option> 
+   <option value="Cardiología">Cardiología</option> 
+   <option value="Cirugía Maxilofacial">Cirugía Maxilofacial</option> 
+   <option value="Cirugía Plástica">Cirugía Plástica</option> 
+   <option value="Cirugía Vascular">Cirugía Vascular</option> 
+   <option value="Comunicación">Comunicación</option> 
+   <option value="Cuidados Paliativos">Cuiados Paliativos</option> 
+   <option value="Dermatología">Dermatología</option> 
+   <option value="Endocrino">Endocrino</option> 
+   <option value="Estadística y Preventiva">Estadística y Preventiva</option> 
+   <option value="Farmacología">Farmacología</option> 
+   <option value="Fisiología">Fisiología</option> 
+   <option value="Genética">Genética</option> 
+   <option value="Geriatría">Geriatría</option> 
+   <option value="Gestión">Gestión</option> 
+   <option value="Ginecología y Obstetricia">Ginecología y Obstetricia</option> 
+   <option value="Hematología">Hematología</option> 
+   <option value="Infecciosas">Infecciosas</option> 
+   <option value="Inmunología">Inmunología</option> 
+   <option value="Medicina Legal">Medicina Legal</option> 
+   <option value="Nefrología">Nefrología</option> 
+   <option value="Oftalmología">Oftalmología</option> 
+   <option value="Oncología">Oncología</option> 
+   <option value="Otorrinolaringología">Otorrinolaringología</option> 
+   <option value="Pediatría">Pediatría</option> 
+   <option value="Psiquiatría">Psiquiatría</option> 
+   <option value="Reumatología">Reumatología</option> 
+   <option value="Sistema Digestivo">Sistema Digestivo</option> 
+   <option value="Sistema Nervioso">Sistema Nervioso</option> 
+   <option value="Traumatología">Traumatología</option> 
+   <option value="Urgencias">Urgencias</option> 
+   <option value="Urología">Urología</option>
+</select>
+
+<h2>Cronómetro</h2>
+
+<h3 id='crono'>00:00:00</h3>		
+
+<input class="boton" type="button" align="center" value="Empezar" onclick="empezarDetener(this);">
+<input class="boton" type="button" align="center" value="Guardar datos" onclick="SaveTime(this);">
+<button class="boton" align="center" onclick="return show('Page1','Page2');">Inicio</button>
+<button class="boton" align="center" onclick="return show('Page3','Page2');">Estadísticas</button>
+
+</div>
+
+<div class="pagina" id="Page3" style="display:none">
+
+<div id="DivTabla"></div>
+
+<button class="boton" align="center" onclick="return show('Page1','Page3');">Inicio</button>
+<button class="boton" align="center" onclick="return show('Page4','Page3');">Buscar datos</button>
+<button class="boton" align="center" onclick="return show('Page5','Page3');">Introducir datos</button>
+<button class="boton" align="center" onclick="BorrarDatos(this);">Borrar estadísticas</button>
+
+</div>
+
+<div class="pagina" id="Page4" style="display:none">
+
+<h2>Selecciona la vuelta, el día y/o la asignatura</h2>
+
+<select class="lista" id="VueltaBus" name="VueltaBus">
+   <option selected value="0">Elige la vuelta</option>
+   <option value="1">Vuelta 1</option>
+   <option value="2">Vuelta 2</option>
+   <option value="3">Vuelta 3</option>
+</select>	
+	
+<select class='lista' id="AsigBus" name="AsigBus">
+   <option selected value="0">Elige una asignatura</option>
+   <option value="Anatomía">Anatomía</option>
+   <option value="Anatomía Patológica">Anatomía Patológica</option> 
+   <option value="Anestesia">Anestesia</option> 
+   <option value="Bioética">Bioética</option> 
+   <option value="Cardiología">Cardiología</option> 
+   <option value="Cirugía Maxilofacial">Cirugía Maxilofacial</option> 
+   <option value="Cirugía Plástica">Cirugía Plástica</option> 
+   <option value="Cirugía Vascular">Cirugía Vascular</option> 
+   <option value="Comunicación">Comunicación</option> 
+   <option value="Cuidados Paliativos">Cuiados Paliativos</option> 
+   <option value="Dermatología">Dermatología</option> 
+   <option value="Endocrino">Endocrino</option> 
+   <option value="Estadística y Preventiva">Estadística y Preventiva</option> 
+   <option value="Farmacología">Farmacología</option> 
+   <option value="Fisiología">Fisiología</option> 
+   <option value="Genética">Genética</option> 
+   <option value="Geriatría">Geriatría</option> 
+   <option value="Gestión">Gestión</option> 
+   <option value="Ginecología y Obstetricia">Ginecología y Obstetricia</option> 
+   <option value="Hematología">Hematología</option> 
+   <option value="Infecciosas">Infecciosas</option> 
+   <option value="Inmunología">Inmunología</option> 
+   <option value="Medicina Legal">Medicina Legal</option> 
+   <option value="Nefrología">Nefrología</option> 
+   <option value="Oftalmología">Oftalmología</option> 
+   <option value="Oncología">Oncología</option> 
+   <option value="Otorrinolaringología">Otorrinolaringología</option> 
+   <option value="Pediatría">Pediatría</option> 
+   <option value="Psiquiatría">Psiquiatría</option> 
+   <option value="Reumatología">Reumatología</option> 
+   <option value="Sistema Digestivo">Sistema Digestivo</option> 
+   <option value="Sistema Nervioso">Sistema Nervioso</option> 
+   <option value="Traumatología">Traumatología</option> 
+   <option value="Urgencias">Urgencias</option>
+   <option value="Urología">Urología</option>
+</select>
+
+<div id="DiasBus"></div>
+	
+<input class="boton" type="button" align="center" value="Buscar" onclick="Buscar(this);">
+<button class="boton" align="center" onclick="return show('Page1','Page4');">Inicio</button>
+<button class="boton" align="center" onclick="return show('Page3','Page4');">Estadísticas</button>
+	
+<div id="timepodiv"></div>
+	
+<div id="DivDatos"></div>
+	
+</div>
+	
+<div class="pagina" id="Page5" style="display:none">
+	
+<select class="lista" id="VueltaIntro" name="VueltaIntro">
+   <option selected value="0">Elige la vuelta</option>
+   <option value="1">Vuelta 1</option>
+   <option value="2">Vuelta 2</option>
+   <option value="3">Vuelta 3</option>
+</select>	
+	
+<select class='lista' id="AsigIntro" name="AsigIntro">
+   <option selected value="0">Elige una asignatura</option>
+   <option value="Anatomía">Anatomía</option>
+   <option value="Anatomía Patológica">Anatomía Patológica</option> 
+   <option value="Anestesia">Anestesia</option> 
+   <option value="Bioética">Bioética</option> 
+   <option value="Cardiología">Cardiología</option> 
+   <option value="Cirugía Maxilofacial">Cirugía Maxilofacial</option> 
+   <option value="Cirugía Plástica">Cirugía Plástica</option> 
+   <option value="Cirugía Vascular">Cirugía Vascular</option> 
+   <option value="Comunicación">Comunicación</option> 
+   <option value="Cuidados Paliativos">Cuiados Paliativos</option> 
+   <option value="Dermatología">Dermatología</option> 
+   <option value="Endocrino">Endocrino</option> 
+   <option value="Estadística y Preventiva">Estadística y Preventiva</option> 
+   <option value="Farmacología">Farmacología</option> 
+   <option value="Fisiología">Fisiología</option> 
+   <option value="Genética">Genética</option> 
+   <option value="Geriatría">Geriatría</option> 
+   <option value="Gestión">Gestión</option> 
+   <option value="Ginecología y Obstetricia">Ginecología y Obstetricia</option> 
+   <option value="Hematología">Hematología</option> 
+   <option value="Infecciosas">Infecciosas</option> 
+   <option value="Inmunología">Inmunología</option> 
+   <option value="Medicina Legal">Medicina Legal</option> 
+   <option value="Nefrología">Nefrología</option> 
+   <option value="Oftalmología">Oftalmología</option> 
+   <option value="Oncología">Oncología</option> 
+   <option value="Otorrinolaringología">Otorrinolaringología</option> 
+   <option value="Pediatría">Pediatría</option> 
+   <option value="Psiquiatría">Psiquiatría</option> 
+   <option value="Reumatología">Reumatología</option> 
+   <option value="Sistema Digestivo">Sistema Digestivo</option> 
+   <option value="Sistema Nervioso">Sistema Nervioso</option> 
+   <option value="Traumatología">Traumatología</option> 
+   <option value="Urgencias">Urgencias</option>
+   <option value="Urología">Urología</option>
+</select>
+	
+<div id='DatosInt'>	
+<label>Tiempo de estudio</label>
+<input type="text" name="horas" maxlength="2" value="h" />
+<label>:</label> 
+<input type="text" name="minutos" maxlength="2" value="min" />
+<label>:</label> 
+<input type="text" name="segundos" maxlength="2" value="s" /> 
+</div>
+
+<button class="boton" align="center" onclick="IntDatos(this);">Introducir Datos</button>
+<button class="boton" align="center" onclick="return show('Page3','Page5');">Volver</button>
+
+</div>
+
+</html>
+
+
