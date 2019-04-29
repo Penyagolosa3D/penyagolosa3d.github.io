@@ -10,14 +10,14 @@ var inicio=0;
 var timeout=0;
 var resglob;
 
-function loadXMLDoc(name) {
+function loadXMLDoc() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       myFunction(this);
     }
   };
-  xmlhttp.open("GET", name, true);
+  xmlhttp.open("GET", "data.xml", true);
   xmlhttp.send();
 }
 
