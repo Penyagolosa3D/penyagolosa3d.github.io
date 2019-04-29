@@ -10,6 +10,14 @@
 				document.getElementById(hidden).style.display='none';
 				return false;
 			}
+			
+			function loadXML() { 
+				var lista = new XMLHttpRequest();
+				lista.open("GET", "data.xml", true);
+				lista.setRequestHeader("Content-Type", "text/xml");
+				lista.send(null);
+				CargaObjetos(this);
+			}
 
 		</script>	
 		<style>
