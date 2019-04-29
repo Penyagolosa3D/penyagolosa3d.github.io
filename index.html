@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>	
 	<head>
-		
 		<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
 		<script>
 			function show(shown, hidden) {
@@ -9,24 +8,7 @@
 				document.getElementById(hidden).style.display='none';
 				return false;
 			}
-			
-			function loadXML() { 
-				var lista = new XMLHttpRequest();
-				lista.open("GET", "data.xml", true);
-				lista.setRequestHeader("Content-Type", "text/xml");
-				lista.send(null);
-				ListaObjetos(lista);
-			}
-			
-			function ListaObjetos(xml) {
-				var i;
-				var xmlDoc = xml.responseXML;
-				alert(xmlDoc);
-				var table = "hola"
-				var data = xmlDoc.getElementsByTagName("Listado").getElementsByTagName("Pieza").getElementsByTagName("Nombre").nodeValue;
-				alert(data)
-				document.getElementById("demo").innerHTML = table;
-			}
+
 		</script>	
 		<style>
 			.pagina {
@@ -52,16 +34,6 @@
 				font-size: large;
 				font-size: 3.5vh;
 				font-family: verdana;
-			}
-
-			table {
-				border-collapse: collapse;
-				border: 2px black solid;
-				font: 12px sans-serif;
-			}
-			td {
-				border: 1px black solid;
-				padding: 5px;
 			}
 
 			header {
@@ -136,8 +108,7 @@
 				<param nAme="DataURL" value="data.csv">
 				<param nAme="UseHeader" value="true">
 			</object>
-			
-			<button class="boton" align="center" onclick="loadXML(this)">Lista de Objetos</button>
+
 			<button class="boton" align="center" onclick="return show('Page1','Page2');">Inicio</button>
 		</div>
 
