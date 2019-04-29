@@ -124,147 +124,20 @@ html {
 
 <div class="pagina" id="Page2" style="display:none">
 	
-<div class="tabla" id="TablaObjetos"></div>	
+	<div class="tabla" id="TablaObjetos"></div>	
+	
+<button class="boton" align="center" onclick="return show('Page1','Page2');">Inicio</button>
+
+</div>
+	
+</div>
+
+<div class="pagina" id="Page2" style="display:none">
+	
+	<div class="tabla" id="TablaObjetos"></div>	
 	
 <button class="boton" align="center" onclick="return show('Page1','Page2');">Inicio</button>
 
 </div>
 
-<div class="pagina" id="Page3" style="display:none">
-
-<div id="DivTabla"></div>
-
-<button class="boton" align="center" onclick="return show('Page1','Page3');">Inicio</button>
-<button class="boton" align="center" onclick="return show('Page4','Page3');">Buscar datos</button>
-<button class="boton" align="center" onclick="return show('Page5','Page3');">Introducir datos</button>
-<button class="boton" align="center" onclick="BorrarDatos(this);">Borrar estadísticas</button>
-
-</div>
-
-<div class="pagina" id="Page4" style="display:none">
-
-<h2>Selecciona la vuelta, el día y/o la asignatura</h2>
-
-<select class="lista" id="VueltaBus" name="VueltaBus">
-   <option selected value="0">Elige la vuelta</option>
-   <option value="1">Vuelta 1</option>
-   <option value="2">Vuelta 2</option>
-   <option value="3">Vuelta 3</option>
-</select>	
-	
-<select class='lista' id="AsigBus" name="AsigBus">
-   <option selected value="0">Elige una asignatura</option>
-   <option value="Anatomía">Anatomía</option>
-   <option value="Anatomía Patológica">Anatomía Patológica</option> 
-   <option value="Anestesia">Anestesia</option> 
-   <option value="Bioética">Bioética</option> 
-   <option value="Cardiología">Cardiología</option> 
-   <option value="Cirugía Maxilofacial">Cirugía Maxilofacial</option> 
-   <option value="Cirugía Plástica">Cirugía Plástica</option> 
-   <option value="Cirugía Vascular">Cirugía Vascular</option> 
-   <option value="Comunicación">Comunicación</option> 
-   <option value="Cuidados Paliativos">Cuiados Paliativos</option> 
-   <option value="Dermatología">Dermatología</option> 
-   <option value="Endocrino">Endocrino</option> 
-   <option value="Estadística y Preventiva">Estadística y Preventiva</option> 
-   <option value="Farmacología">Farmacología</option> 
-   <option value="Fisiología">Fisiología</option> 
-   <option value="Genética">Genética</option> 
-   <option value="Geriatría">Geriatría</option> 
-   <option value="Gestión">Gestión</option> 
-   <option value="Ginecología y Obstetricia">Ginecología y Obstetricia</option> 
-   <option value="Hematología">Hematología</option> 
-   <option value="Infecciosas">Infecciosas</option> 
-   <option value="Inmunología">Inmunología</option> 
-   <option value="Medicina Legal">Medicina Legal</option> 
-   <option value="Nefrología">Nefrología</option> 
-   <option value="Oftalmología">Oftalmología</option> 
-   <option value="Oncología">Oncología</option> 
-   <option value="Otorrinolaringología">Otorrinolaringología</option> 
-   <option value="Pediatría">Pediatría</option> 
-   <option value="Psiquiatría">Psiquiatría</option> 
-   <option value="Reumatología">Reumatología</option> 
-   <option value="Sistema Digestivo">Sistema Digestivo</option> 
-   <option value="Sistema Nervioso">Sistema Nervioso</option> 
-   <option value="Traumatología">Traumatología</option> 
-   <option value="Urgencias">Urgencias</option>
-   <option value="Urología">Urología</option>
-</select>
-
-<div id="DiasBus"></div>
-	
-<input class="boton" type="button" align="center" value="Buscar" onclick="Buscar(this);">
-<button class="boton" align="center" onclick="return show('Page1','Page4');">Inicio</button>
-<button class="boton" align="center" onclick="return show('Page3','Page4');">Estadísticas</button>
-	
-<div id="timepodiv"></div>
-	
-<div id="DivDatos"></div>
-	
-</div>
-	
-<div class="pagina" id="Page5" style="display:none">
-	
-<select class="lista" id="VueltaIntro" name="VueltaIntro">
-   <option selected value="0">Elige la vuelta</option>
-   <option value="1">Vuelta 1</option>
-   <option value="2">Vuelta 2</option>
-   <option value="3">Vuelta 3</option>
-</select>	
-	
-<select class='lista' id="AsigIntro" name="AsigIntro">
-   <option selected value="0">Elige una asignatura</option>
-   <option value="Anatomía">Anatomía</option>
-   <option value="Anatomía Patológica">Anatomía Patológica</option> 
-   <option value="Anestesia">Anestesia</option> 
-   <option value="Bioética">Bioética</option> 
-   <option value="Cardiología">Cardiología</option> 
-   <option value="Cirugía Maxilofacial">Cirugía Maxilofacial</option> 
-   <option value="Cirugía Plástica">Cirugía Plástica</option> 
-   <option value="Cirugía Vascular">Cirugía Vascular</option> 
-   <option value="Comunicación">Comunicación</option> 
-   <option value="Cuidados Paliativos">Cuiados Paliativos</option> 
-   <option value="Dermatología">Dermatología</option> 
-   <option value="Endocrino">Endocrino</option> 
-   <option value="Estadística y Preventiva">Estadística y Preventiva</option> 
-   <option value="Farmacología">Farmacología</option> 
-   <option value="Fisiología">Fisiología</option> 
-   <option value="Genética">Genética</option> 
-   <option value="Geriatría">Geriatría</option> 
-   <option value="Gestión">Gestión</option> 
-   <option value="Ginecología y Obstetricia">Ginecología y Obstetricia</option> 
-   <option value="Hematología">Hematología</option> 
-   <option value="Infecciosas">Infecciosas</option> 
-   <option value="Inmunología">Inmunología</option> 
-   <option value="Medicina Legal">Medicina Legal</option> 
-   <option value="Nefrología">Nefrología</option> 
-   <option value="Oftalmología">Oftalmología</option> 
-   <option value="Oncología">Oncología</option> 
-   <option value="Otorrinolaringología">Otorrinolaringología</option> 
-   <option value="Pediatría">Pediatría</option> 
-   <option value="Psiquiatría">Psiquiatría</option> 
-   <option value="Reumatología">Reumatología</option> 
-   <option value="Sistema Digestivo">Sistema Digestivo</option> 
-   <option value="Sistema Nervioso">Sistema Nervioso</option> 
-   <option value="Traumatología">Traumatología</option> 
-   <option value="Urgencias">Urgencias</option>
-   <option value="Urología">Urología</option>
-</select>
-	
-<div id='DatosInt'>	
-<label>Tiempo de estudio</label>
-<input type="text" name="horas" maxlength="2" value="h" />
-<label>:</label> 
-<input type="text" name="minutos" maxlength="2" value="min" />
-<label>:</label> 
-<input type="text" name="segundos" maxlength="2" value="s" /> 
-</div>
-
-<button class="boton" align="center" onclick="IntDatos(this);">Introducir Datos</button>
-<button class="boton" align="center" onclick="return show('Page3','Page5');">Volver</button>
-
-</div>
-
 </html>
-
-
