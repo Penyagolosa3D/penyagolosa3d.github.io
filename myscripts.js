@@ -2,8 +2,25 @@
 function show(shown, hidden) {
   document.getElementById(shown).style.display='block';
   document.getElementById(hidden).style.display='none';
-  LoadDays(this);
+  if shown == 'Page2' {
+	  CargaObjetos();
+  };
   return false;
+}
+
+function CargaObjetos() {
+	var i;
+	var xmlDoc = xml.responseXML;
+	var table="<tr><th>Nombre</th><th>Precio</th></tr>";
+	var x = xmlDoc.getElementsByTagName("Pieza");
+	for (i = 0; i <x.length; i++) { 
+		table += "<tr><td>" +
+			x[i].getElementsByTagName("Nombre")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			x[i].getElementsByTagName("Precio")[0].childNodes[0].nodeValue +
+			"</td></tr>";
+  }
+  document.getElementById("TablaObjetos").innerHTML = table;
 }
 
 function loadXMLDoc() {
