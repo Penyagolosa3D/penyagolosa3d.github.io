@@ -7,6 +7,7 @@ function show(shown, hidden) {
 	return false;
 }
 
+
 function loadXML() { 
 	var lista = new XMLHttpRequest();
 	lista.open("GET", "data.xml", true);
