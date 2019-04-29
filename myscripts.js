@@ -10,7 +10,6 @@ function show(shown, hidden) {
 	return false;
 }
 
-
 function CargaObjetos() {
 	alert("abro")
 	xmlhttp.open("GET", "data.xml", true);
