@@ -9,6 +9,10 @@
 				document.getElementById(hidden).style.display='none';
 				return false;
 			}
+			function readFile() {
+				var f = open("data.xml","r+")
+				alert(f)
+			}
 
 		</script>	
 		<style>
@@ -89,6 +93,7 @@
 	<body bgcolor='white'>
 		<div class="pagina" id="Page1">
 			<button class="boton" align="center" onclick="return show('Page2','Page1');">Lista de Objetos</button>
+			<button class="boton" align="center" onclick="return readFile(this);">Lista de Objetos</button>
 			<button class="boton" align="center" onclick="return show('Page3','Page1');">Lista de Ventas</button>
 		</div>
 
