@@ -2,12 +2,11 @@
 function show(shown, hidden) {
   document.getElementById(shown).style.display='block';
   document.getElementById(hidden).style.display='none';
-  if shown == 'Page2' {
+  if (shown == 'Page2') {
 	  CargaObjetos();
   };
   return false;
 }
-
 
 function CargaObjetos() {
 	var i;
