@@ -129,18 +129,18 @@
 		</header>
 		
 		<div class="pagina" id="Page1">
-			<button class="boton" align="center" onclick="show('Page2','Page1');">Lista de Objetos</button>
-			<button class="boton" align="center" onclick="show('Page3','Page1');">Lista de Ventas</button>
+			<button class="boton" align="center" onclick="return show('Page2','Page1');">Lista de Objetos</button>
+			<button class="boton" align="center" onclick="return show('Page3','Page1');">Lista de Ventas</button>
 		</div>
 
 		<div class="pagina" id="Page2" style="display:none">
 			<table id="demo"></table>
-			<button class="boton" align="center" onclick="show('Page1','Page2');">Inicio</button>
+			<button class="boton" align="center" onclick="return show('Page1','Page2');">Inicio</button>
 		</div>
 
 		<div class="pagina" id="Page3" style="display:none">
 			<div id="TablaVentas"></div>	
-			<button class="boton" align="center" onclick="show('Page1','Page3');">Inicio</button>
+			<button class="boton" align="center" onclick="return show('Page1','Page3');">Inicio</button>
 		</div>
 	</body>
 </html>
