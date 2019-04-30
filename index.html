@@ -8,14 +8,9 @@
 		<link href="css/dataTables.bootstrap.css" rel="stylesheet">
 	</head>
 	<body bgcolor='white'>
-		<?php
-                $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
-                echo fread($myfile,filesize("webdictionary.txt"));
-                fclose($myfile);
-                ?>
 		<div class="pagina" id="Page1">
 			<button class="boton" align="center" onclick="return show('Page2','Page1');">Lista de Objetos</button>
-			<button class="boton" align="center" onclick="return readFile(this);">Lista de Objetos</button>
+			<button class="boton" align="center" onclick="return writeObjeto(this);">Lista de Objetos</button>
 			<a href="data.csv"> datos </a>
 			<button class="boton" align="center" onclick="return show('Page3','Page1');">Lista de Ventas</button>
 		</div>
@@ -37,6 +32,13 @@
 		<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
 		<script type="text/javascript" src="js/csv_to_html_table.js"></script>
 		<script>
+			<?php
+			function writeObjeto() {
+				echo "Hello world!";
+			}
+			writeMsg(); // call the function
+			?>
+
 			CsvToHtmlTable.init({
 				csv_path: 'data/listado.csv', 
 				element: 'tablaObjetos', 
