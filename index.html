@@ -32,6 +32,14 @@
 		<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
 		<script type="text/javascript" src="js/csv_to_html_table.js"></script>
 		<script>
+			function writeData(line) {
+				<?php
+				$line = line;
+				$handle = fopen("test.csv", "a");
+				fputcsv($handle, $line); 
+				fclose($handle);
+				?>
+			}
 			CsvToHtmlTable.init({
 				csv_path: 'data/listado.csv', 
 				element: 'tablaObjetos', 
