@@ -10,7 +10,7 @@
 	<body bgcolor='white'>
 		<div class="pagina" id="Page1">
 			<button class="boton" align="center" onclick="return show('Page2','Page1');">Lista de Objetos</button>
-			<button class="boton" align="center" onclick="writeObjeto(this);">Escribir Objetos</button>
+			<button class="boton" align="center" onclick="return downloadData(this);">Escribir Objetos</button>
 			<a href="data.csv"> datos </a>
 			<button class="boton" align="center" onclick="return show('Page3','Page1');">Lista de Ventas</button>
 		</div>
@@ -31,6 +31,30 @@
 		<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
 		<script type="text/javascript" src="js/csv_to_html_table.js"></script>
 		<script>
+			function downloadData(){
+				//get data from tabulator
+				var data = ["casa","20"]
+
+				//generate header row
+				var csvContent = [Object.keys(data[0]).join(",")];
+
+				//generate each row of the table
+				data.forEach(function(row){
+					var rowString = Object.values(row).join(",");
+					csvContent.push(rowString);
+				});
+
+				//generate temporary link element to hold data
+				var element = document.createElement('a');
+				element.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvContent.join("\n")));
+				element.setAttribute('download', "table_data.csv");
+
+				//trigger download link and remove temporary element
+				element.style.display = 'none';
+				document.body.appendChild(element);
+				element.click();
+				document.body.removeChild(element);
+			}
 			CsvToHtmlTable.init({
 				csv_path: 'data/listado.csv', 
 				element: 'tablaObjetos', 
