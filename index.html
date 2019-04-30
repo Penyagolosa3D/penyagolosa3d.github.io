@@ -2,25 +2,7 @@
 <html>	
 	<head>
 		
-		<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
-		<script>
-			function show(shown, hidden) {
-				document.getElementById(shown).style.display='block';
-				document.getElementById(hidden).style.display='none';
-				return false;
-			}
-			function readFile() {
-				f = document.open("data.xml");
-				h = f.getElementsByTagName("Listado");
-				h2 = f.getElementsByTagName("Pieza");
-				h3 = f.getElementsByTagName("Nombre").innerHTML.toString();
-				alert(f);
-				alert(h);
-				alert(h2);
-				alert(h3);
-			}
-
-		</script>	
+		<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">	
 		<style>
 			.pagina {
 				margin:0px;
@@ -137,6 +119,11 @@
 				csv_options: {separator: ',', delimiter: '"'},
 				datatables_options: {"paging": false}
 			});
-</script>
+			function show(shown, hidden) {
+				document.getElementById(shown).style.display='block';
+				document.getElementById(hidden).style.display='none';
+				return false;
+			}
+		</script>
 	</body>
 </html>
