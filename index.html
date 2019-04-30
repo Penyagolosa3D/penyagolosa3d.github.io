@@ -10,6 +10,13 @@
 		
 		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 		<script>
+			function show(shown, hidden) {
+				document.getElementById(shown).style.display='block';
+				document.getElementById(hidden).style.display='none';
+				return false;
+			}
+		</script>
+		<script>
 			// Initialize Firebase
 			var config = {
 				apiKey: "AIzaSyCJrqz3FQ5JOsakPW0xrZoyli1kjy5CZkE",
@@ -39,42 +46,6 @@
 			<div id="tablaVentas"></div>	
 			<button class="boton" align="center" onclick="return show('Page1','Page3');">Inicio</button>
 		</div>
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/jquery.csv.min.js"></script>
-		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
-		<script type="text/javascript" src="js/csv_to_html_table.js"></script>
-		<script type="text/javascript" src="js/papaparse.js"></script>
-		<script>
-			function Data() {
-				var file = '/data/listado.csv';
-				var csv = Papa.parse(file, {
-					complete: function(results) {
-						console.log("Finished:", results.data);
-					}
-				});
-				alert(csv.data);
-			}
-			CsvToHtmlTable.init({
-				csv_path: 'data/listado.csv', 
-				element: 'tablaObjetos', 
-				allow_download: true,
-				csv_options: {separator: ',', delimiter: '"'},
-				datatables_options: {"paging": false}
-			});
-			CsvToHtmlTable.init({
-				csv_path: 'data/ventas.csv', 
-				element: 'tablaVentas', 
-				allow_download: true,
-				csv_options: {separator: ',', delimiter: '"'},
-				datatables_options: {"paging": false}
-			});
-			function show(shown, hidden) {
-				document.getElementById(shown).style.display='block';
-				document.getElementById(hidden).style.display='none';
-				return false;
-			}
-		</script>
+
 	</body>
 </html>
