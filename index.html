@@ -12,8 +12,12 @@
 			function readFile() {
 				f = document.open("data.xml");
 				h = f.getElementsByTagName("Listado");
+				h2 = f.getElementsByTagName("Pieza");
+				h3 = f.getElementsByTagName("Nombre").innerHTML;
 				alert(f);
 				alert(h);
+				alert(h2);
+				alert(h3);
 			}
 
 		</script>	
