@@ -1,82 +1,11 @@
 <!DOCTYPE html>
 <html>	
 	<head>
-		
-		<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">	
-		<style>
-			.pagina {
-				margin:0px;
-				height:100%;
-				width:100%;
-			}
-			
-			.lista {
-				border-radius: 5px;
-				width: 70%;
-				margin-left: 15%;
-				margin-bottom: 2%;
-				font-size: large;
-				font-size: 3.5vh;
-				font-family: verdana;
-			}
-			.boton {
-				margin-bottom: 2%;
-				width: 50%;
-				text-align: center; 
-				margin-left: 25%;
-				font-size: large;
-				font-size: 3.5vh;
-				font-family: verdana;
-			}
-
-			header {
-				margin-top:0px;
-				width:100%;
-			}
-
-			h1 {
-			    color: red;
-			    font-family: impact;
-			    font-size: xx-large;
-				font-size: 10vh;
-				text-align:center;
-				text-decoration:underline;
-			}
-
-			h2 {
-
-			    font-family: verdana;
-			    font-size: xx-large;
-				font-size: 6vh;
-				text-align:center;
-
-			}
-
-			h3 {
-			    color:#C60;
-			    font-family: verdana;
-			    font-size: xx-large;
-				font-size: 5vh;
-				text-align:center;
-			}
-
-			input {
-				text-align:center;
-				width: 10%x;
-				display: inline;
-				margin:2px;
-				font-size: large;
-				font-size: 3.5vh;
-				font-family: verdana;
-			}
-
-			label {
-				margin:0.5px;
-				font-size: large;
-				font-size: 3.5vh;
-				font-family: verdana;
-			}
-		</style>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/dataTables.bootstrap.css" rel="stylesheet">
 	</head>
 	<body bgcolor='white'>
 		<div class="pagina" id="Page1">
@@ -87,23 +16,7 @@
 		</div>
 
 		<div class="pagina" id="Page2" style="display:none">
-			<table datasrc='#data'>
-				<thead>
-					<tr><th>Number</th><th>English</th><th>French</th><th>German</th></tr>
-				</thead>
-				<tbody> <tr>
-					<td><span datafld='number'> </span></td>
-					<td><span datafld='english'></span></td>
-					<td><span datafld='french'> </span></td>
-					<td><span datafld='german'> </span></td>
-				</tbody>
-			</table>
-			
-			<object ID=data classid="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83">
-				<param nAme="DataURL" value="data.csv">
-				<param nAme="UseHeader" value="true">
-			</object>
-
+			<div id='table-container'></div>
 			<button class="boton" align="center" onclick="return show('Page1','Page2');">Inicio</button>
 		</div>
 
@@ -111,6 +24,12 @@
 			<div id="TablaVentas"></div>	
 			<button class="boton" align="center" onclick="return show('Page1','Page3');">Inicio</button>
 		</div>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.csv.min.js"></script>
+		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
+		<script type="text/javascript" src="js/csv_to_html_table.js"></script>
 		<script>
 			CsvToHtmlTable.init({
 				csv_path: 'data/data.csv', 
