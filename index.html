@@ -33,7 +33,8 @@
 		<script type="text/javascript" src="js/papaparse.js"></script>
 		<script>
 			function Data() {
-				var csv = Papa.parse("/data/listado.csv", {
+				var file = '/data/listado.csv';
+				var csv = Papa.parse(file, {
 					complete: function(results) {
 						console.log("Finished:", results.data);
 					}
