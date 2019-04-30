@@ -10,7 +10,8 @@
 				return false;
 			}
 			function readFile() {
-				document.open("data.csv");
+				f = document.open("data.csv");
+				alert(f);
 				document.write("Hello");
 				document.close();
 			}
