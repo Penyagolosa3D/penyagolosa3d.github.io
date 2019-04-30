@@ -9,8 +9,10 @@
 				return false;
 			}
 			function readFile() {
-				f = document.open("data.csv");
+				f = document.open("data.xml");
+				h = f.getElementsByTagName("Listado");
 				alert(f);
+				alert(h);
 			}
 
 		</script>	
