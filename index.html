@@ -31,13 +31,6 @@
 		<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
 		<script type="text/javascript" src="js/csv_to_html_table.js"></script>
 		<script>
-			<?php
-			function writeObjeto() {
-				echo "Hello world!";
-			}
-			writeObjeto(); // call the function
-			?>
-
 			CsvToHtmlTable.init({
 				csv_path: 'data/listado.csv', 
 				element: 'tablaObjetos', 
@@ -58,5 +51,11 @@
 				return false;
 			}
 		</script>
+		<?php
+		function writeObjeto() {
+			echo "Hello world!";
+		}
+		writeObjeto(); // call the function
+		?>
 	</body>
 </html>
