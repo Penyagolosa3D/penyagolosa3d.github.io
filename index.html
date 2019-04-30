@@ -9,8 +9,9 @@
 				return false;
 			}
 			function readFile() {
-				var f = fopen("data.csv");
-				alert(f);
+				document.open("data.csv");
+				document.write("Hello");
+				document.close();
 			}
 
 		</script>	
