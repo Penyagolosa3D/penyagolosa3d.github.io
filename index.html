@@ -129,5 +129,14 @@
 			<div id="TablaVentas"></div>	
 			<button class="boton" align="center" onclick="return show('Page1','Page3');">Inicio</button>
 		</div>
+		<script>
+			CsvToHtmlTable.init({
+				csv_path: 'data/data.csv', 
+				element: 'table-container', 
+				allow_download: true,
+				csv_options: {separator: ',', delimiter: '"'},
+				datatables_options: {"paging": false}
+			});
+</script>
 	</body>
 </html>
